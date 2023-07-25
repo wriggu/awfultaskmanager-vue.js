@@ -87,6 +87,7 @@ const deleteTodo = (todoId) => {
 
 <style lang="scss" scoped>
 main {
+  color: #1e1e1e;
   display: flex;
   flex-direction: column;
   max-width: 500px;
