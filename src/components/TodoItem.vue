@@ -10,7 +10,7 @@ const props = defineProps({
     required: true,
   },
 });
-defineEmits(["toggle-complete", "edit-todo", "update-todo", 'delete-todo']);
+defineEmits(["toggle-complete", "edit-todo", "update-todo", "delete-todo"]);
 </script>
 
 <template>
@@ -26,6 +26,7 @@ defineEmits(["toggle-complete", "edit-todo", "update-todo", 'delete-todo']);
         type="text"
         :value="todo.todo"
         @input="$emit('update-todo', $event.target.value, index)"
+        @keyup.enter="$emit('edit-todo', index)"
       />
       <span v-else :class="{ 'completed-todo': todo.isCompleted }">
         {{ todo.todo }}
@@ -48,7 +49,13 @@ defineEmits(["toggle-complete", "edit-todo", "update-todo", 'delete-todo']);
         width="22"
         @click="$emit('edit-todo', index)"
       />
-      <Icon icon="ph:trash" class="icon" color="#f95e5e" width="22" @click="$emit('delete-todo', todo.id)"/>
+      <Icon
+        icon="ph:trash"
+        class="icon"
+        color="#f95e5e"
+        width="22"
+        @click="$emit('delete-todo', todo.id)"
+      />
     </div>
   </li>
 </template>
@@ -60,8 +67,8 @@ li {
   gap: 10px;
   padding: 16px 10px;
   background-color: #f1f1f1;
-  box-shadow: 0 20px 25px -5px rgb(0 0 0 / 0.1),
-    0 8px 10px -6px rgb(0 0 0 / 0.1);
+  box-shadow: 0 10px 12px -10px rgb(0 0 0 / 0.1),
+    0 4px 5px -3px rgb(0 0 0 / 0.1);
 
   &:hover {
     .todo-actions {

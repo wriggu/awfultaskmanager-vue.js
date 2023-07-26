@@ -6,9 +6,8 @@ import { RouterLink } from 'vue-router';
   <header>
     <nav class="container">
       <div class="branding">
-        <img src="../assets/Vue_Logo_Black.png" alt="" />
-        <h1>Vue Todos</h1>
-      </div>
+        <h1>Awful Task Manager</h1>
+      </div>    
       <ul class="nav-routes">
         <RouterLink to="/">Home</RouterLink>
         <RouterLink to="/about">About</RouterLink>
@@ -20,7 +19,7 @@ import { RouterLink } from 'vue-router';
 
 <style lang="scss" scoped>
 header {
-  background-color: #f1f1f1;
+  background-color: #212121;
   nav {
     display: flex;
     align-items: center;
@@ -29,13 +28,10 @@ header {
     .branding {
       display: flex;
       align-items: center;
-      gap: 8px;
-      img {
-        max-width: 50px;
-      }
 
       h1 {
         font-size: 24px;
+        color: white;
       }
     }
 
@@ -43,8 +39,10 @@ header {
       display: flex;
       flex: 1;
       justify-content: flex-end;
+      align-items: center;
       gap: 12px;
       list-style: none;
+      color: white;
 
       a {
         text-decoration: none;

@@ -61,7 +61,7 @@ const deleteTodo = (todoId) => {
 
 <template>
   <main>
-    <h1>Create Todo</h1>
+    <h1>What do you want to accomplish?</h1>
     <TodoCreator @create-todo="createTodo" />
     <ul class="todo-list" v-if="todoList.length > 0">
       <TodoItem

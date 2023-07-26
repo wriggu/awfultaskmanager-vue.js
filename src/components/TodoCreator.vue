@@ -1,5 +1,5 @@
 <script setup>
-import { reactive, defineEmits } from 'vue';
+import { reactive, defineEmits } from "vue";
 import TodoButton from "./TodoButton.vue";
 
 const emit = defineEmits(["create-todo"]);
@@ -18,18 +18,17 @@ const createTodo = () => {
     return;
   }
   todoState.invalid = true;
-  todoState.errMsg = "Todo value cannot be empty";
+  todoState.errMsg = "Enter a task";
 };
 </script>
 
 <template>
   <div class="input-wrap" :class="{ 'input-err': todoState.invalid }">
-    <input type="text" v-model="todoState.todo"/>
-    <TodoButton @click="createTodo()"/>
+    <input type="text" v-model="todoState.todo" v-on:keyup.enter="createTodo()" />
+    <TodoButton @click="createTodo()" />
   </div>
   <p v-show="todoState.invalid" class="err-msg">{{ todoState.errMsg }}</p>
 </template>
-
 
 <style lang="scss" scoped>
 .input-wrap {
@@ -55,7 +54,6 @@ const createTodo = () => {
       outline: none;
     }
   }
-
 }
 
 .err-msg {
