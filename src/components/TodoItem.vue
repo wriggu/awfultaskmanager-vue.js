@@ -1,5 +1,7 @@
 <script setup>
 import { Icon } from "@iconify/vue";
+import { ref } from 'vue';
+
 const props = defineProps({
   todo: {
     type: Object,
@@ -11,6 +13,10 @@ const props = defineProps({
   },
 });
 defineEmits(["toggle-complete", "edit-todo", "update-todo", "delete-todo"]);
+const inputField = ref()
+const focusInput = () => {
+  inputField.value.focus();
+};
 </script>
 
 <template>
@@ -37,22 +43,23 @@ defineEmits(["toggle-complete", "edit-todo", "update-todo", "delete-todo"]);
         v-if="todo.isEditing"
         icon="ph:check-circle"
         class="icon"
-        color="#41b080"
+        color="191815"
         width="22"
-        @click="$emit('edit-todo', index)"
+        @click="focusInput, $emit('edit-todo', index)"
+          ref="inputField"
       />
       <Icon
         v-else
         icon="ph:pencil-fill"
         class="icon"
-        color="#41b080"
+        color="191815"
         width="22"
         @click="$emit('edit-todo', index)"
       />
       <Icon
         icon="ph:trash"
         class="icon"
-        color="#f95e5e"
+        color="#191815"
         width="22"
         @click="$emit('delete-todo', todo.id)"
       />
@@ -64,11 +71,13 @@ defineEmits(["toggle-complete", "edit-todo", "update-todo", "delete-todo"]);
 li {
   display: flex;
   align-items: center;
+  margin-right: 9%;
   gap: 10px;
   padding: 16px 10px;
-  background-color: #f1f1f1;
-  box-shadow: 0 10px 12px -10px rgb(0 0 0 / 0.1),
-    0 4px 5px -3px rgb(0 0 0 / 0.1);
+  border-radius: 5px;
+  background-color: transparent;
+  box-shadow: 0 -10px 120px -25px rgb(0 0 0 / 0.1),
+    0 8px 25px 1px rgb(0 0 0 / 0.1);
 
   &:hover {
     .todo-actions {
@@ -80,12 +89,15 @@ li {
     appearance: none;
     width: 20px;
     height: 20px;
-    background-color: #fff;
+    background-color: 191815;
+    border: 1px solid #191815;
     border-radius: 50%;
     box-shadow: 0 4px 6px -1px rgb(0 0 0 / 0.1), 0 2px 4px -2px rgb(0 0 0 / 0.1);
+    cursor: pointer;
 
     &:checked {
-      background-color: #41b080;
+      background-color: #191815;
+      
     }
   }
 
@@ -94,12 +106,16 @@ li {
 
     .completed-todo {
       text-decoration: line-through;
+      color: #191815;
     }
 
     input[type="text"] {
+      border: transparent;
       width: 100%;
-      padding: 2px 6px;
-      border: 2px solid #41b080;
+      
+      &:focus {
+      outline: none;
+      }
     }
   }
 
@@ -110,6 +126,7 @@ li {
     transition: 150ms ease-in-out;
 
     .icon {
+      background-color: transparent;
       cursor: pointer;
     }
   }

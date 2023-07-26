@@ -12,9 +12,14 @@
 </template>
 
 <style>
+a { 
+  color: inherit; 
+} 
+
 .about {
   text-align: center;
   padding: 50px;
   margin: 20px;
+  color: 191815;
 }
 </style>

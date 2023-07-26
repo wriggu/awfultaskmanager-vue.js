@@ -12,10 +12,12 @@ import TodoHeader from "./components/TodoHeader.vue";
 @import url("https://fonts.googleapis.com/css2?family=Rubik:wght@300;400;500;700&display=swap");
 
 * {
-  font-family: "Rubik", sans-serif;
+  font-family: 'Supreme', sans-serif;
   margin: 0;
   padding: 0;
   box-sizing: border-box;
+  background-color: #FFFFE3;
+  cursor: cell;
 }
 
 .container {

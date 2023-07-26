@@ -6,7 +6,7 @@ import { RouterLink } from 'vue-router';
   <header>
     <nav class="container">
       <div class="branding">
-        <h1>Awful Task Manager</h1>
+        <h1>.ksatlufwa</h1>
       </div>    
       <ul class="nav-routes">
         <RouterLink to="/">Home</RouterLink>
@@ -19,11 +19,11 @@ import { RouterLink } from 'vue-router';
 
 <style lang="scss" scoped>
 header {
-  background-color: #212121;
   nav {
     display: flex;
     align-items: center;
     padding: 25px 16px;
+    
 
     .branding {
       display: flex;
@@ -31,18 +31,20 @@ header {
 
       h1 {
         font-size: 24px;
-        color: white;
+        color: #191815
       }
     }
 
     .nav-routes {
+      font-weight: 500;
+      margin-top: 2.5%;
       display: flex;
       flex: 1;
       justify-content: flex-end;
       align-items: center;
       gap: 12px;
       list-style: none;
-      color: white;
+      color: #191815;
 
       a {
         text-decoration: none;

@@ -24,7 +24,7 @@ const createTodo = () => {
 
 <template>
   <div class="input-wrap" :class="{ 'input-err': todoState.invalid }">
-    <input type="text" v-model="todoState.todo" v-on:keyup.enter="createTodo()" />
+    <input type="text" v-model="todoState.todo" v-on:keyup.enter="createTodo()" autofocus />
     <TodoButton @click="createTodo()" />
   </div>
   <p v-show="todoState.invalid" class="err-msg">{{ todoState.errMsg }}</p>
@@ -32,12 +32,14 @@ const createTodo = () => {
 
 <style lang="scss" scoped>
 .input-wrap {
+  padding-left: 5px;
   display: flex;
   transition: 250ms ease;
-  border: 2px solid #41b080;
+  border: 2px solid #191815;
+  background-color: #e8e8cf;
 
   &.input-err {
-    border-color: red;
+    border-color: #FF6961;
   }
 
   &:focus-within {
@@ -49,6 +51,7 @@ const createTodo = () => {
     width: 100%;
     padding: 8px 6px;
     border: none;
+    background-color: #e8e8cf;
 
     &:focus {
       outline: none;
@@ -60,6 +63,6 @@ const createTodo = () => {
   margin-top: 6px;
   font-size: 12px;
   text-align: center;
-  color: red;
+  color: #FF6961;
 }
 </style>

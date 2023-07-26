@@ -61,7 +61,7 @@ const deleteTodo = (todoId) => {
 
 <template>
   <main>
-    <h1>What do you want to accomplish?</h1>
+    <h1>display: task;</h1>
     <TodoCreator @create-todo="createTodo" />
     <ul class="todo-list" v-if="todoList.length > 0">
       <TodoItem
@@ -75,12 +75,12 @@ const deleteTodo = (todoId) => {
       />
     </ul>
     <p class="todos-msg" v-else>
-      <Icon icon="noto-v1:sad-but-relieved-face" width="22" />
-      <span>You have no todo's to complete! Add one!</span>
+      <Icon icon="fluent-emoji:stopwatch" width="22" />
+      <span>lets get to work</span>
     </p>
     <p v-if="todoCompleted && todoList.length > 0" class="todos-msg">
-      <Icon icon="noto-v1:party-popper" />
-      <span>You have completed all your todos!</span>
+      <Icon icon="fluent-emoji:thumbs-up" />
+      <span>good stuff</span>
     </p>
   </main>
 </template>
@@ -91,12 +91,13 @@ main {
   flex-direction: column;
   max-width: 500px;
   width: 100%;
-  margin: 0 auto;
-  padding: 40px 16px;
-
+  margin: 13% auto;
+  padding: 40px 21px;
+  background-color: transparent;
   h1 {
-    margin-bottom: 16px;
-    text-align: center;
+    font-weight: 700;
+    margin-bottom: 6px;
+    text-align: left;
   }
 
   .todo-list {
@@ -108,6 +109,7 @@ main {
   }
 
   .todos-msg {
+    font-weight: 250;
     display: flex;
     align-items: center;
     justify-content: center;
