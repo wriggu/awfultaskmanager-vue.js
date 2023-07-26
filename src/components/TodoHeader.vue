@@ -20,10 +20,10 @@ import { RouterLink } from 'vue-router';
 <style lang="scss" scoped>
 header {
   nav {
+    max-width: 95%;
     display: flex;
-    align-items: center;
     padding: 25px 16px;
-    
+    align-items: center;
 
     .branding {
       display: flex;
@@ -41,7 +41,6 @@ header {
       display: flex;
       flex: 1;
       justify-content: flex-end;
-      align-items: center;
       gap: 12px;
       list-style: none;
       color: #191815;
