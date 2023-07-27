@@ -11,8 +11,8 @@
       Dan Qu ● STUDIO HAKU ● 2023
     </p>
     <a class="subtext">
-
-    </a>
+<!-- TODO: add instagram/github icons-->
+    </a> 
   </div>
 </template>
 

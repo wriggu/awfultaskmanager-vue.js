@@ -6,7 +6,7 @@ import { RouterLink } from 'vue-router';
   <header>
     <nav class="container">
       <div class="branding">
-        <h1>.ksatlufwa</h1>
+        <h1 >.ksatlufwa</h1>
       </div>    
       <ul class="nav-routes">
         <RouterLink to="/">Home</RouterLink>
@@ -18,6 +18,23 @@ import { RouterLink } from 'vue-router';
 
 
 <style lang="scss" scoped>
+@keyframes slideInBottom {
+  0% {
+    transform: translateY(+75%);
+    opacity: 0;
+  }
+  25% {
+    opacity: 0;
+  }
+  75% {
+    opacity: 80%;
+  }
+  100% {
+    transform: translateY(0);
+    opacity: 100%;
+  }
+}
+
 header {
   nav {
     max-width: 90%;
@@ -34,6 +51,7 @@ header {
         color: #191815;
         margin-top: 0px;
         margin-bottom: 0px;
+        animation: 1s cubic-bezier(0.14, 0.93, 0.6, 1.01) 0s 1 slideInBottom;
       }
     }
 
@@ -47,6 +65,7 @@ header {
       color: #191815;
       margin-bottom: 0px;
       margin-top: 0px;
+      animation: 1s cubic-bezier(0.14, 0.93, 0.6, 1.01) 0s 1 slideInBottom;
 
       a {
         text-decoration: none;
