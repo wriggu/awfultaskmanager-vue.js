@@ -78,11 +78,13 @@ li {
   background-color: transparent;
   box-shadow: 0 -10px 120px -25px rgb(0 0 0 / 0.1),
     0 8px 25px 1px rgb(0 0 0 / 0.1);
-
+  transition: all .13s ease;
   &:hover {
     .todo-actions {
       opacity: 1;
     }
+    transform: scale(1.05);
+    
   }
 
   input[type="checkbox"] {

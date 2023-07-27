@@ -51,6 +51,12 @@ header {
       a {
         text-decoration: none;
         color: inherit;
+        transition: all .13s ease;
+        
+        &:hover {
+        transform: scale(1.1);
+
+      }
       }
     }
   }
