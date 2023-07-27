@@ -13,7 +13,7 @@ const props = defineProps({
   },
 });
 defineEmits(["toggle-complete", "edit-todo", "update-todo", "delete-todo"]);
-const inputField = ref()
+const inputField = ref() //this doesnt work - fix later
 const focusInput = () => {
   inputField.value.focus();
 };
@@ -27,7 +27,9 @@ const focusInput = () => {
       @input="$emit('toggle-complete', index)"
     />
     <div class="todo">
+      
       <input
+
         v-if="todo.isEditing"
         type="text"
         :value="todo.todo"
@@ -45,8 +47,7 @@ const focusInput = () => {
         class="icon"
         color="191815"
         width="22"
-        @click="focusInput, $emit('edit-todo', index)"
-          ref="inputField"
+        @click="$emit('edit-todo', index)"
       />
       <Icon
         v-else
@@ -54,7 +55,8 @@ const focusInput = () => {
         class="icon"
         color="191815"
         width="22"
-        @click="$emit('edit-todo', index)"
+        @click="$emit('edit-todo', index), focusInput()"
+          ref="inputField"
       />
       <Icon
         icon="ph:trash"
@@ -68,6 +70,34 @@ const focusInput = () => {
 </template>
 
 <style lang="scss" scoped>
+@keyframes listElementSlide{
+  0% {
+    transform: translateY(+75%);
+    opacity: 0;
+  }
+  25% {
+    opacity: 0;
+  }
+  75% {
+    opacity: 80%;
+  }
+  100% {
+    transform: translateY(0);
+    opacity: 100%;
+  }
+}
+@keyframes opacitySwitch{
+  0% {
+    opacity: 0;
+  }
+  75% {
+    opacity: 60%;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+
 li {
   display: flex;
   align-items: center;
@@ -78,7 +108,8 @@ li {
   background-color: transparent;
   box-shadow: 0 -10px 120px -25px rgb(0 0 0 / 0.1),
     0 8px 25px 1px rgb(0 0 0 / 0.1);
-  transition: all .13s ease;
+  transition: all .55s ease;
+  animation: 1s cubic-bezier(0.14, 0.93, 0.6, 1.01) 0s 1 listElementSlide;
   &:hover {
     .todo-actions {
       opacity: 1;
@@ -99,13 +130,13 @@ li {
 
     &:checked {
       background-color: #191815;
-      
+      transition: 150ms ease-in-out;
     }
   }
 
   .todo {
     flex: 1;
-
+      animation: 1s cubic-bezier(0.14, 0.93, 0.6, 1.01) 0s 1 listElementSlide;
     .completed-todo {
       text-decoration: line-through;
       color: #191815;

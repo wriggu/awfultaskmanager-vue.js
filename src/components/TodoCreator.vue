@@ -61,6 +61,7 @@ const createTodo = () => {
 
 .err-msg {
   margin-top: 6px;
+  margin-bottom: -18px;
   font-size: 12px;
   text-align: center;
   color: #FF6961;

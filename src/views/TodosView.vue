@@ -86,6 +86,23 @@ const deleteTodo = (todoId) => {
 </template>
 
 <style lang="scss" scoped>
+@keyframes slideInBottom {
+  0% {
+    transform: translateY(+75%);
+    opacity: 0;
+  }
+  25% {
+    opacity: 0;
+  }
+  75% {
+    opacity: 80%;
+  }
+  100% {
+    transform: translateY(0);
+    opacity: 100%;
+  }
+}
+
 main {
   display: flex;
   flex-direction: column;
@@ -94,10 +111,12 @@ main {
   margin: 13% auto;
   padding: 40px 21px;
   background-color: transparent;
+  animation: 1s cubic-bezier(0.14, 0.93, 0.6, 1.01) 0s 1 slideInBottom;
   h1 {
     font-weight: 700;
     margin-bottom: 6px;
     text-align: left;
+    animation: 1s cubic-bezier(0.14, 0.93, 0.6, 1.01) 0s 1 slideInBottom;
   }
 
   .todo-list {
@@ -106,6 +125,7 @@ main {
     list-style: none;
     margin-top: 24px;
     gap: 20px;
+    animation: 1s cubic-bezier(0.14, 0.93, 0.6, 1.01) 0s 1 slideInBottom;
   }
 
   .todos-msg {
