@@ -31,7 +31,9 @@ header {
 
       h1 {
         font-size: 24px;
-        color: #191815
+        color: #191815;
+        margin-top: 0px;
+        margin-bottom: 0px;
       }
     }
 
@@ -43,6 +45,8 @@ header {
       gap: 12px;
       list-style: none;
       color: #191815;
+      margin-bottom: 0px;
+      margin-top: 0px;
 
       a {
         text-decoration: none;
