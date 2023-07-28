@@ -122,7 +122,7 @@ li {
     appearance: none;
     width: 20px;
     height: 20px;
-    background-color: 191815;
+    background-color: #e8e8cf;
     border: 1px solid #191815;
     border-radius: 50%;
     box-shadow: 0 4px 6px -1px rgb(0 0 0 / 0.1), 0 2px 4px -2px rgb(0 0 0 / 0.1);
