@@ -1,6 +1,8 @@
 <script setup>
 import { RouterView } from "vue-router";
 import TodoHeader from "./components/TodoHeader.vue";
+window.onload = function() {document.body.scrollTop = document.documentElement.scrollTop = 0;};
+
 </script>
 
 <template>
@@ -18,6 +20,7 @@ import TodoHeader from "./components/TodoHeader.vue";
   box-sizing: border-box;
   background-color: #FFFFE3;
   cursor: cell;
+  scroll-behavior: smooth;
 }
 
 .container {

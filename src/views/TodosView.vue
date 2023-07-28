@@ -78,9 +78,9 @@ const deleteTodo = (todoId) => {
       <Icon icon="fluent-emoji:stopwatch" width="22" />
       <span style="animation: 1s cubic-bezier(0.14, 0.93, 0.6, 1.01) 0s 1 slideInBottom;">lets get to work</span>
     </p>
-    <p v-if="todoCompleted && todoList.length > 0" class="todos-msg" >
+    <p v-if="todoCompleted && todoList.length > 0" class="todos-msg">
       <Icon icon="fluent-emoji:thumbs-up" />
-      <span >good stuff</span>
+      <span>good stuff</span>
     </p>
   </main>
 </template>

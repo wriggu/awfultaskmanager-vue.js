@@ -6,7 +6,7 @@ import { RouterLink } from 'vue-router';
   <header>
     <nav class="container">
       <div class="branding">
-        <h1 >.ksatlufwa</h1>
+        <h1><RouterLink to="/" style="text-decoration: none; color: inherit;">.ksatlufwa</RouterLink></h1>
       </div>    
       <ul class="nav-routes">
         <RouterLink to="/">Home</RouterLink>
